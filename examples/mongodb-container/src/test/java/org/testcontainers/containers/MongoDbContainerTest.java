@@ -8,6 +8,25 @@ import java.net.Socket;
 
 
 public class MongoDbContainerTest {
+    public String hilera;
+    @Rule
+    public GenericContainer redis = new GenericContainer(DockerImageName.parse("redis:5.0.3-alpine"))
+                                        .withExposedPorts(6379);
+    @Before
+    public void setUp() {
+        String address = redis.getHost();
+        Integer port = redis.getFirstMappedPort();
+
+        // Now we have an address and port for Redis, no matter where it is running
+        hilera = address + port;
+    }
+
+    @Test
+    public void testSimplePutAndGet() {
+        hilera;
+        Thread.sleep(4000);
+        assertEquals(hilera, hilera);
+    }
 
     @Test
     public void containerStartsAndPublicPortIsAvailable() {
