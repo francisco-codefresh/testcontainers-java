@@ -23,7 +23,6 @@ public class MongoDbContainerTest {
 
     @Test
     public void testSimplePutAndGet() {
-        hilera;
         Thread.sleep(4000);
         assertEquals(hilera, hilera);
     }
