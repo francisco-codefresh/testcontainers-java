@@ -27,6 +27,9 @@ public class MongoDbContainerTest {
             container.start();
             Thread.sleep(10000);
             hilera.equals(hilera);
+        } catch(InterruptedException e) {
+             // this part is executed when an exception (in this example InterruptedException) occurs
+             hilera=hilera+"error";
         }
 
     }
