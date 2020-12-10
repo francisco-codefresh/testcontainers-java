@@ -25,6 +25,7 @@ public class MongoDbContainerTest {
     public void testSimplePutAndGet() {
         try (GenericContainer container = new GenericContainer(DockerImageName.parse("redis:5.0.3-alpine")).withExposedPorts(6379)) {
             container.start();
+            hilera="something";
             Thread.sleep(10000);
             hilera.equals(hilera);
         } catch(InterruptedException e) {
