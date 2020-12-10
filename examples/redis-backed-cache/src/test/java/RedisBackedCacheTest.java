@@ -17,10 +17,11 @@ import static org.rnorth.visibleassertions.VisibleAssertions.assertTrue;
  * Integration test for Redis-backed cache implementation.
  */
 public class RedisBackedCacheTest {
-
     @Rule
     public GenericContainer<?> redis = new GenericContainer<>(DockerImageName.parse("redis:3.0.6"))
                                             .withExposedPorts(6379);
+
+
     private Cache cache;
 
     @Before
@@ -49,4 +50,14 @@ public class RedisBackedCacheTest {
         assertFalse("When an object that's not in the cache is retrieved, nothing is found",
                 foundObject.isPresent());
     }
+
+    // @Rule
+    // public GenericContainer<?> francisco = new GenericContainer<>(DockerImageName.parse("franciscocodefresh/simple-web-app:c88df35"))
+    //                                         .withExposedPorts(80);
+
+    @Test
+    public void franciscoTest() {
+        assertFalse("should be false", false);
+    }   
+
 }
