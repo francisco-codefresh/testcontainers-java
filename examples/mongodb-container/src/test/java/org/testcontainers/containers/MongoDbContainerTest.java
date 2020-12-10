@@ -8,32 +8,32 @@ import java.net.Socket;
 
 
 public class MongoDbContainerTest {
-    // public String hilera;
-    // @Rule
-    // public GenericContainer redis = new GenericContainer(DockerImageName.parse("redis:5.0.3-alpine"))
-    //                                     .withExposedPorts(6379);
-    // @Before
-    // public void setUp() {
-    //     String address = redis.getHost();
-    //     Integer port = redis.getFirstMappedPort();
+    public String hilera;
+    @Rule
+    public GenericContainer redis = new GenericContainer(DockerImageName.parse("redis:5.0.3-alpine"))
+                                        .withExposedPorts(6379);
+    @Before
+    public void setUp() {
+        String address = redis.getHost();
+        Integer port = redis.getFirstMappedPort();
 
-    //     // Now we have an address and port for Redis, no matter where it is running
-    //     hilera = address + port;
-    // }
+        // Now we have an address and port for Redis, no matter where it is running
+        hilera = address + port;
+    }
 
-    // @Test
-    // public void testSimplePutAndGet() {
-    //     try (GenericContainer container = new GenericContainer(DockerImageName.parse("redis:5.0.3-alpine")).withExposedPorts(6379)) {
-    //         container.start();
-    //         hilera="something";
-    //         Thread.sleep(10000);
-    //         hilera.equals(hilera);
-    //     } catch(InterruptedException e) {
-    //          // this part is executed when an exception (in this example InterruptedException) occurs
-    //          hilera=hilera+"error";
-    //     }
+    @Test
+    public void testSimplePutAndGet() {
+        try (GenericContainer container = new GenericContainer(DockerImageName.parse("redis:5.0.3-alpine")).withExposedPorts(6379)) {
+            container.start();
+            hilera="something";
+            Thread.sleep(10000);
+            hilera.equals(hilera);
+        } catch(InterruptedException e) {
+             // this part is executed when an exception (in this example InterruptedException) occurs
+             hilera=hilera+"error";
+        }
 
-    // }
+    }
 
     @Test
     public void containerStartsAndPublicPortIsAvailable() {
