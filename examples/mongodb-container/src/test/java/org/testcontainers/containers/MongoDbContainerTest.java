@@ -1,6 +1,6 @@
 package org.testcontainers.containers;
-import org.junit.*
-//import org.junit.Test;
+import org.junit.*;
+import org.junit.Test;
 import org.testcontainers.utility.DockerImageName;
 
 import java.io.IOException;
