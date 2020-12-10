@@ -1,6 +1,6 @@
 package org.testcontainers.containers;
-
-import org.junit.Test;
+import org.junit.*
+//import org.junit.Test;
 import org.testcontainers.utility.DockerImageName;
 
 import java.io.IOException;
@@ -23,8 +23,12 @@ public class MongoDbContainerTest {
 
     @Test
     public void testSimplePutAndGet() {
-        Thread.sleep(4000);
-        assertEquals(hilera, hilera);
+        try (MongoDbContainer container = new GenericContainer(DockerImageName.parse("redis:5.0.3-alpine")).withExposedPorts(6379)) {
+            container.start();
+            Thread.sleep(10000);
+            hilera.equals(hilera)
+        }
+
     }
 
     @Test
