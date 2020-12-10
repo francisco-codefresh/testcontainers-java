@@ -1,5 +1,5 @@
 package org.testcontainers.containers;
-import org.junit.*;
+//import org.junit.*;
 import org.junit.Test;
 import org.testcontainers.utility.DockerImageName;
 
@@ -8,7 +8,7 @@ import java.net.Socket;
 
 
 public class MongoDbContainerTest {
-    public String hilera;
+    // public String hilera;
     // @Rule
     // public GenericContainer redis = new GenericContainer(DockerImageName.parse("redis:5.0.3-alpine"))
     //                                     .withExposedPorts(6379);
@@ -21,19 +21,19 @@ public class MongoDbContainerTest {
     //     hilera = address + port;
     // }
 
-    @Test
-    public void testSimplePutAndGet() {
-        try (GenericContainer container = new GenericContainer(DockerImageName.parse("redis:5.0.3-alpine")).withExposedPorts(6379)) {
-            container.start();
-            hilera="something";
-            Thread.sleep(10000);
-            hilera.equals(hilera);
-        } catch(InterruptedException e) {
-             // this part is executed when an exception (in this example InterruptedException) occurs
-             hilera=hilera+"error";
-        }
+    // @Test
+    // public void testSimplePutAndGet() {
+    //     try (GenericContainer container = new GenericContainer(DockerImageName.parse("redis:5.0.3-alpine")).withExposedPorts(6379)) {
+    //         container.start();
+    //         hilera="something";
+    //         Thread.sleep(10000);
+    //         hilera.equals(hilera);
+    //     } catch(InterruptedException e) {
+    //          // this part is executed when an exception (in this example InterruptedException) occurs
+    //          hilera=hilera+"error";
+    //     }
 
-    }
+    // }
 
     @Test
     public void containerStartsAndPublicPortIsAvailable() {
