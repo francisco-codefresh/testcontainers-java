@@ -23,7 +23,7 @@ public class MongoDbContainerTest {
 
     @Test
     public void testSimplePutAndGet() {
-        try (GenericContainer container = new GenericContainer(DockerImageName.parse("franciscocodefresh/multistag:latest")).withExposedPorts(6379)) {
+        try (GenericContainer container = new GenericContainer(DockerImageName.parse("franciscocodefresh/simple-web-app:latest")).withExposedPorts(6379)) {
             container.start();
             hilera="something";
             Thread.sleep(10000);
